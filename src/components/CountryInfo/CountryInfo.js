@@ -41,7 +41,7 @@ const CountryInfo = () => {
 
         {isLoading && !error && <h4>Loading ...</h4>}
         {error && !isLoading && {error}}
-
+     <div className='country__info__map'>
       {country?.map((country,index) => (
         <div className='country__info__container' key={index}>
           <div className='country__info-img'>
@@ -53,10 +53,12 @@ const CountryInfo = () => {
               <h5>Population: <span>{new Intl.NumberFormat().format(country.population)}</span></h5>
               <h5>Capital: <span>{country.capital}</span></h5>
               <h5>Region: <span>{country.region}</span></h5>
+              <h5>Sub-Region: <span>{country.subregion}</span></h5>
             </div>
           </div>
         </div>
            ))}
+           </div>
     </div>
   )
 }
